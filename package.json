@@ -1,6 +1,6 @@
 {
   "name": "comp229.m2022.midterm",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "scripts": {
     "start": "node ./server.js"
@@ -8,7 +8,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
     "body-parser": "^1.19.0",
-    "bootstrap": "^5.1.1",
+    "bootstrap": "^5.1.3",
     "compression": "^1.7.4",
     "connect-flash": "^0.1.1",
     "cookie-parser": "~1.4.4",
@@ -36,5 +36,13 @@
     "Passportjs."
   ],
   "author": "Julio Vinicius",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArunaRavikumar/COMP229004-M2022-MidTerm-301243154.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ArunaRavikumar/COMP229004-M2022-MidTerm-301243154/issues"
+  },
+  "homepage": "https://github.com/ArunaRavikumar/COMP229004-M2022-MidTerm-301243154#readme"
 }
