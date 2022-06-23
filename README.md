@@ -1,2 +1,2 @@
-# COMP229004-M2022-MidTerm-301243154
- Midterm exam project
+# COMP229.M2022.Midterm.Template
+ COMP229.M2022 - Midterm Template
