@@ -1,4 +1,9 @@
 // Import
+// car model schema
+// File Name: car.js
+// Author's Name: Aruna Ravi Kumar
+// Student ID: 301243154
+// Web app name: Car Applcation
 let mongoose = require('mongoose');
 
 // Create a model class
@@ -14,8 +19,8 @@ let carModel = mongoose.Schema(
         price: Number        
     },
     {
-        collection: "cars"
+        collection: "car"
     }
 );
 
-module.exports = mongoose.model("Car", carModel);
+module.exports = mongoose.model('car', carModel);

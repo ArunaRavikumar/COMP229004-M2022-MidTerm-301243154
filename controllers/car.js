@@ -1,4 +1,8 @@
 // create a reference to the model
+// File Name: car.js
+// Author's Name: Aruna Ravi Kumar
+// Student ID: 301243154
+// Web app name: Car Applcation
 let CarModel = require('../models/car');
 
 // Gets all cars from the Database and renders the page to list them all.
@@ -46,7 +50,13 @@ module.exports.details = (req, res, next) => {
 // Renders the Add form using the add_edit.ejs template
 module.exports.displayAddPage = (req, res, next) => {
     
-    // ADD YOUR CODE HERE        
+    // ADD YOUR CODE HERE    
+    let newCar = CarModel();
+
+    res.render('cars/add_edit', {
+        title: 'Add a new Car',
+        car: newCar
+    })        
 
 }
 
@@ -54,13 +64,56 @@ module.exports.displayAddPage = (req, res, next) => {
 module.exports.processAddPage = (req, res, next) => {
 
     // ADD YOUR CODE HERE
+    let newCar = CarModel({
+        _id: req.body.id,
+        make: req.body.make,
+        model: req.body.model,
+        year: req.body.year,
+        kilometers: req.body.kilometers,
+        doors: req.body.doors,
+        seats: req.body.seats,
+        color: req.body.color,
+        price: req.body.price  
+    });
+
+    CarModel.create(newCar, (err, car) =>{
+        if(err)
+        {
+            console.log(err);
+            res.end(err);
+        }
+        else
+        {
+            // refresh the book list
+            console.log(car);
+            res.redirect('/cars/list');
+        }
+    });
+
 
 }
 
 // Gets a car by id and renders the Edit form using the add_edit.ejs template
 module.exports.displayEditPage = (req, res, next) => {
-    
+
     // ADD YOUR CODE HERE
+    let id = req.params.id;
+
+    CarModel.findById(id, (err, carToEdit) => {
+        if(err)
+        {
+            console.log(err);
+            res.end(err);
+        }
+        else
+        {
+            //show the edit view
+            res.render('cars/add_edit', {
+                title: 'Edit Car', 
+                car: carToEdit
+            })
+        }
+    });
 
 }
 
@@ -68,6 +121,35 @@ module.exports.displayEditPage = (req, res, next) => {
 module.exports.processEditPage = (req, res, next) => {
     
     // ADD YOUR CODE HERE
+    let id = req.params.id
+
+    let updatedCar = CarModel({
+        _id: req.body.id,
+        make: req.body.make,
+        model: req.body.model,
+        year: req.body.year,
+        kilometers: req.body.kilometers,
+        doors: req.body.doors,
+        seats: req.body.seats,
+        color: req.body.color,
+        price: req.body.price  
+    });
+
+    // console.log(updatedItem);
+
+    CarModel.updateOne({_id: id}, updatedCar, (err) => {
+        if(err)
+        {
+            console.log(err);
+            res.end(err);
+        }
+        else
+        {
+            // console.log(req.body);
+            // refresh the book list
+            res.redirect('/cars/list');
+        }
+    });
     
 }
 
@@ -75,5 +157,18 @@ module.exports.processEditPage = (req, res, next) => {
 module.exports.performDelete = (req, res, next) => {
     
     // ADD YOUR CODE HERE
+    let id = req.params.id;
 
+    CarModel.remove({_id: id}, (err) => {
+        if(err)
+        {
+            console.log(err);
+            res.end(err);
+        }
+        else
+        {
+            // refresh the book list
+            res.redirect('/cars/list');
+        }
+    });
 }

@@ -1,3 +1,8 @@
+// for authentication
+// File Name: local.js
+// Author's Name: Aruna Ravi Kumar
+// Student ID: 301243154
+// Web app name: Car Applcation
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const User = require('../models/user');

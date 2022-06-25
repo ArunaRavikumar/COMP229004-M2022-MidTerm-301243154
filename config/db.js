@@ -1,7 +1,12 @@
+// database connection
+// File Name: db.js
+// Author's Name: Aruna Ravi Kumar
+// Student ID: 301243154
+// Web app name: Car Applcation
 // Do not expose your credentials in your code.
+
 // username: aruna password: midterm
-//let atlasDB = "mongodb+srv://aruna:midterm@CarsCluster/carstore?retryWrites=true&w=majority";
- let atlasDB ="mongodb+srv://aruna:midterm@carscluster0.juzdiob.mongodb.net/?retryWrites=true&w=majority";
+  let atlasDB= "mongodb+srv://aruna:midterm@carscluster0.juzdiob.mongodb.net/carCollection";
 // Database setup
 let mongoose = require('mongoose');
 
