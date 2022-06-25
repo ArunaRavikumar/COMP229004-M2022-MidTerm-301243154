@@ -7,6 +7,7 @@
 
 // username: aruna password: midterm
   let atlasDB= "mongodb+srv://aruna:midterm@carscluster0.juzdiob.mongodb.net/carCollection";
+ 
 // Database setup
 let mongoose = require('mongoose');
 
