@@ -1,6 +1,6 @@
 {
   "name": "comp229.m2022.midterm",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "private": true,
   "scripts": {
     "start": "node ./server.js"
@@ -44,5 +44,6 @@
   "bugs": {
     "url": "https://github.com/ArunaRavikumar/COMP229004-M2022-MidTerm-301243154/issues"
   },
-  "homepage": "https://github.com/ArunaRavikumar/COMP229004-M2022-MidTerm-301243154#readme"
+  "homepage": "https://github.com/ArunaRavikumar/COMP229004-M2022-MidTerm-301243154#readme",
+  "devDependencies": {}
 }
